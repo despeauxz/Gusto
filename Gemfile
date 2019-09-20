@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # For env variables
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
+# For flash messages
+gem "puffly"
+
 # add kaminari for pagination
 gem "kaminari"
 
@@ -59,6 +62,7 @@ group :development do
 end
 
 group :test do
+  gem "capybara"
   gem "codeclimate-test-reporter", "~> 1.0.0"
   gem "database_cleaner"
   gem "factory_bot_rails"
