@@ -99,7 +99,7 @@ jobs:
       - image: circleci/ruby:2.5.1-stretch-node
     environment:
       CC_TEST_REPORTER_ID: b164082e8709c3e543ef58e097656371e1068c0692bdf9b57f116fa59c8ced1e
-    working_directory: ~/bikeindex/bike_index
+    working_directory: ~/
 
     steps:
       - attach_workspace:
