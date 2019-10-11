@@ -15,5 +15,12 @@ module Gusto
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.cache_store = :redis_store, ENV["REDIS_URL"], { expires_in: 90.minutes }
+    config.active_job.queue_adapter = :sidekiq
+    config.action_mailer.delivery_method = :mailgun
+    config.action_mailer.mailgun_settings = {
+      api_key: ENV['MAILGUN_API_KEY'],
+      domain: ENV['MAILGUN_DOMAIN_NAME'],
+    }
   end
 end

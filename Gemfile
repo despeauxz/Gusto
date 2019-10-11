@@ -18,7 +18,9 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+gem "redis-rails"
+gem 'redis-namespace'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,7 +49,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "faker"
   gem "pry"
-  gem 'rubocop', '~> 0.74.0', require: false
+  gem 'rubocop', require: false
+  gem "brakeman"
 end
 
 group :development do
@@ -70,12 +73,27 @@ group :test do
   gem "rspec-rails", "~> 3.5"
   gem "simplecov", "<= 0.13"
   gem 'selenium-webdriver'
+  gem "should_not"
+  gem "shoulda-matchers", "~> 3.1"
+  gem 'rspec-retry'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production, :staging do
+  # Error and Reporting tool
+  gem "sentry-raven"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# gem for jobs and cron tasks
+gem 'sidekiq'
+gem "sidekiq-cron", "~> 1.0"
+
 # Gem for mailgun services
 gem 'mailgun-ruby'
+
+#Gem for creating and managing database views
+gem "scenic"

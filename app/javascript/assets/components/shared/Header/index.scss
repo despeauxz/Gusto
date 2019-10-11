@@ -1,0 +1,26 @@
+.icon {
+    color: #C5C7CD;
+    font-weight: lighter;
+
+    .noti {
+        position: absolute;
+        top: 3px;
+        right: -1px;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 1px solid #fff;
+    }
+}
+
+.avatar {
+
+    span {
+        line-height: 2rem;
+    }
+}
+
+.divider {
+    margin: 0 2rem;
+    border: 1px solid #C5C7CD;
+    height: 2rem;
+}
