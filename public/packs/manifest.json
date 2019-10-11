@@ -1,0 +1,22 @@
+{
+    "application.js": "/packs/js/application-834a4a2667ca6c52d3fd.js",
+    "application.js.map": "/packs/js/application-834a4a2667ca6c52d3fd.js.map",
+    "entrypoints": {
+        "application": {
+            "js": ["/packs/js/application-834a4a2667ca6c52d3fd.js"],
+            "js.map": ["/packs/js/application-834a4a2667ca6c52d3fd.js.map"]
+        },
+        "index": {
+            "js": ["/packs/js/index-6d2e45d66deeeccab110.js"],
+            "js.map": ["/packs/js/index-6d2e45d66deeeccab110.js.map"]
+        }
+    },
+    "index.js": "/packs/js/index-6d2e45d66deeeccab110.js",
+    "index.js.map": "/packs/js/index-6d2e45d66deeeccab110.js.map",
+    "media/assets/public/img/animated-logo.svg": "/packs/media/assets/public/img/animated-logo-19d787459e28f9f88d555d34a4df0340.svg",
+    "media/assets/public/img/auth.jpg": "/packs/media/assets/public/img/auth-bcd94f4119aef96ec8f6227cbbfffdb6.jpg",
+    "media/assets/public/img/avatar.jpg": "/packs/media/assets/public/img/avatar-849def72fae9908fc3bb37b3791d5989.jpg",
+    "media/assets/public/img/chart.png": "/packs/media/assets/public/img/chart-1fed35cf8952fe9bf72493028ff91eea.png",
+    "media/assets/public/img/logo.svg": "/packs/media/assets/public/img/logo-0a87a840d5c3269e2fe26ec1e7394d0a.svg",
+    "media/assets/public/img/ticket.png": "/packs/media/assets/public/img/ticket-0a39872c3b7485126c7ad9aaca5c5f6c.png"
+}

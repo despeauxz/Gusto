@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavLink /> render the NavLink component 1`] = `
+<div
+  aria-label="Overview"
+  className="flex items-center"
+  data-balloon-pos="right"
+>
+  <Link
+    className="text-white opacity-75 block w-full p-3 py-3 flex active "
+    to="/"
+  >
+    <span>
+      <Img
+        alt="link icon"
+        className="w-4 h-4"
+        src="https://placeholder.com/200/300"
+      />
+    </span>
+    <h4
+      className="text-xs md:hidden lg:block ml-4 font-medium text-white tracking-wider"
+    >
+      Overview
+    </h4>
+  </Link>
+</div>
+`;

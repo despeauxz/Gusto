@@ -7,7 +7,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'rspec/retry'
 require 'capybara/rspec'
-require 'action_cable/testing/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -77,4 +76,34 @@ RSpec.configure do |config|
 
   config.include Rails.application.routes.url_helpers
   config.include FactoryBot::Syntax::Methods
+
+  Shoulda::Matchers.configure do |c|
+    c.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
 end
+
+# Lock Chromedriver version
+Webdrivers::Chromedriver.version = '2.34' if ENV.key?('CIRCLECI')
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app,
+    browser: :chrome,
+    desired_capabilities: {
+      "chromeOptions" => {
+        "args" => %w{ window-size=1024, 768 },
+        "w3c" => false
+      }
+    }
+  )
+
+end
+
+Capybara.configure do |config|
+  config.default_max_wait_time = 30 # seconds
+  config.default_driver        = :selenium
+end
+
+include Helpers

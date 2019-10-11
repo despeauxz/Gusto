@@ -1,21 +1,76 @@
 {
-  "name": "Quidax",
-  "private": true,
-  "dependencies": {
-    "@babel/preset-react": "^7.0.0",
-    "@rails/actioncable": "^6.0.0-alpha",
-    "@rails/activestorage": "^6.0.0-alpha",
-    "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "^4.0.7",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "turbolinks": "^5.2.0"
-  },
-  "version": "0.1.0",
-  "devDependencies": {
-    "webpack-dev-server": "^3.8.1"
-  }
+    "name": "gusto",
+    "private": true,
+    "scripts": {
+        "lint": "eslint ./app/javascript/assets",
+        "lint:fix": "eslint ./app/javascript/assets --fix .",
+        "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+        "cypress:open": "cypress open",
+        "cypress:all": "cypress run",
+        "test": "jest --coverage",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@rails/actioncable": "^6.0.0-alpha",
+        "@rails/activestorage": "^6.0.0-alpha",
+        "@rails/ujs": "^6.0.0-alpha",
+        "@rails/webpacker": "^4.0.7",
+        "autoprefixer": "^9.6.1",
+        "axios": "^0.19.0",
+        "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+        "balloon-css": "^1.0.3",
+        "classnames": "^2.2.6",
+        "history": "^4.10.1",
+        "prop-types": "^15.7.2",
+        "react": "^16.10.1",
+        "react-dom": "^16.10.1",
+        "react-hot-loader": "^4.12.14",
+        "react-redux": "^7.1.1",
+        "react-router-dom": "^5.1.2",
+        "react-router-redux": "^4.0.8",
+        "redux": "^4.0.4",
+        "redux-logger": "^3.0.6",
+        "redux-thunk": "^2.3.0",
+        "tailwindcss": "^1.1.2",
+        "turbolinks": "^5.2.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "cypress": "^3.4.1",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "enzyme-to-json": "^3.4.2",
+        "eslint": "^6.5.1",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.4.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.16.0",
+        "husky": "^3.0.8",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^24.9.0",
+        "lint-staged": "^9.4.1",
+        "moxios": "^0.4.0",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^1.11.1",
+        "redux-mock-store": "^1.5.3",
+        "webpack-dev-server": "^3.8.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.+(js|jsx)": [
+            "eslint --fix",
+            "git add"
+        ],
+        "*.+(json|css|md)": [
+            "prettier --write",
+            "git add"
+        ]
+    }
 }

@@ -4,14 +4,11 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const Hello = () => (
-  <div>Hello World, Chai I am lost</div>
-);
+import App from '../assets';
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
-})
+});
